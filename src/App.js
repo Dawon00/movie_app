@@ -13,7 +13,7 @@ function App() {
       )
     ).json();
     setMovies(json.data.movies);
-    setLoading(false); //로딩이 끝남
+    setLoading(false); //로딩이 끝남.
   };
 
   useEffect(() => {
