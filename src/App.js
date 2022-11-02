@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
+import Movie from "./Movie";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,24 +27,16 @@ function App() {
       ) : (
         //로딩중이 아닐 때 보여줄 화면
         <div>
-          {movies.map(
-            (
-              movie //movie 는 movies 리스트의 각각의 item 들
-            ) => (
-              <div key={movie.id}>
-                <img src={movie.medium_cover_image} />
-                <h2>{movie.title}</h2>
-                <p>{movie.summary}</p>
-                <ul>
-                  {movie.genres.map((g) => (
-                    <li key={g}>{g}</li>
-                  ))}
-                </ul>
-              </div>
-            )
-          )}
+          {movies.map((movie) => (
+            <Movie
+              medium_cover_image={movie.medium_cover_image}
+              title={movie.title}
+              summary={movie.summary}
+              genres={movie.genres}
+            ></Movie>
+          ))}
         </div>
-      )}
+      )}{" "}
     </div>
   );
 }
