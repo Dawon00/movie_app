@@ -3,16 +3,23 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Movie from "./components/Movie";
 import ProTypes from "prop-types";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
 
 function App() {
-  return null;
+  return (
+    <Router>
+      <Switch>
+        <Route path="/movie/:id">
+          <Detail />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
-
-Movie.prototype = {
-  medium_cover_image: ProTypes.string.isRequired,
-  title: ProTypes.string.isRequired,
-  summary: ProTypes.string.isRequired,
-  genres: ProTypes.arrayOf(ProTypes.string).isRequired,
-};
 
 export default App;
