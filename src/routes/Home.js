@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Movie from "../components/Movie";
+import "./Home.css";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ function Home() {
         <h1>Loading...</h1>
       ) : (
         //로딩중이 아닐 때 보여줄 화면
-        <div>
+        <div class="card-container">
           {movies.map((movie) => (
             <Movie
               key={movie.id}

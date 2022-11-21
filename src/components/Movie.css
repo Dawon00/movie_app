@@ -1,0 +1,16 @@
+.card {
+  align-items: center;
+  background-color: white;
+  width:280px;
+  box-shadow: 1px 2px 9px #F4AAB9;
+  padding: 10px;
+}
+
+.img-card{
+  display:flex;
+   justify-content:center; /* horizontally center */
+   align-items:center;    /* vertically center */
+     box-shadow: 1px 2px 9px #F4AAB9;
+
+}
+
